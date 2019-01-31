@@ -1,0 +1,22 @@
+<div style="text-align:center;width:500px;">
+  <table *ngIf="people">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Age</th>
+              <th>Eye Color</th>
+              <th>Hair Color</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let peo of people;">
+              <td>{{peo.name}}</td>
+              <td>{{peo.gender}}</td>
+              <td>{{peo.age}}</td>
+              <td>{{peo.eye_color}}</td>
+              <td>{{peo.hair_color}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

@@ -1,0 +1,22 @@
+<div style="text-align:center;width:500px;">
+  <table *ngIf="films">
+      <thead>
+          <tr>
+              <th>Title</th>
+              <th>Director</th>
+              <th>Producer</th>
+              <th>Release Date</th>
+              <th>Score</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let fil of films;">
+              <td>{{fil.title}}</td>
+              <td>{{fil.director}}</td>
+              <td>{{fil.producer}}</td>
+              <td>{{fil.release_date}}</td>
+              <td>{{fil.rt_score}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

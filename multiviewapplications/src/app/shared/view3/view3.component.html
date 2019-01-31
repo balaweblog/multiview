@@ -1,0 +1,20 @@
+<div style="text-align:center;width:500px;">
+  <table *ngIf="locations">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Climate</th>
+              <th>Terrain</th>
+              <th>Surface Water</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let loc of locations;">
+              <td>{{loc.name}}</td>
+              <td>{{loc.climate}}</td>
+              <td>{{loc.terrain}}</td>
+              <td>{{loc.surface_water}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
