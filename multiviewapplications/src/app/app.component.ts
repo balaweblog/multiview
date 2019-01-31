@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef, ComponentRef, ComponentFactory } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef, ComponentRef, ComponentFactory, OnDestroy, OnInit } from '@angular/core';
 import { View1Component } from './shared/view1/view1.component';
 import { View2Component } from './shared/view2/view2.component';
 import { View3Component } from './shared/view3/view3.component';
@@ -8,7 +8,7 @@ import { View3Component } from './shared/view3/view3.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
 
   @ViewChild('contentplaceholder', { read: ViewContainerRef }) container;
 
@@ -38,4 +38,7 @@ export class AppComponent implements OnInit{
     this.componentRef = this.container.createComponent(this.factory);
     this.componentRef.instance.type = type;
   }
+  ngOnDestroy() {
+    this.componentRef.destroy();
+   }
 }
