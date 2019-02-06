@@ -1,24 +1,71 @@
-import config from './main';
-var winston = require('winston');
-
-var logger = winston.createLogger({
-    transports: [
-        new winston.transports.File({
-            level: config.log.level,
-            filename: config.log.path,
-            handleExceptions: true,
-            json: true,
-            maxsize: 5242880, //5MB
-            maxFiles: 5,
-            colorize: false
-        }),
-    ],
-    exitOnError: false
-});
-
-module.exports = logger;
-module.exports.stream = {
-    write: function(message, encoding){
-        logger.info(message);
-    }
-};
+{
+  "name": "hotcakeapi",
+  "version": "0.0.0",
+  "description": "hot cake api code",
+  "scripts": {
+    "build": "gulp  build",
+    "build--watch": "gulp watch",
+    "deploy": "gulp deploy",
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
+    "start": "gulp prodstart",
+    "stop": "gulp prodstop",
+    "restart": "gulp prodrestart",
+    "delete": "gulp proddelete",
+    "list": "pm2 list",
+    "monitor": "pm2 monit",
+    "test": "snyk test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/crypto-js": "^3.1.43",
+    "@types/express": "^4.16.0",
+    "@types/express-session": "1.15.10",
+    "@types/gulp-nodemon": "0.0.32",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "crypto-js": "^3.1.9-1",
+    "del": "^3.0.0",
+    "express": "^4.16.3",
+    "express-oas-generator": "^0.1.25",
+    "express-rate-limit": "2.12.2",
+    "express-session": "^1.15.6",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "helmet": "^3.13.0",
+    "jsonwebtoken": "8.3.0",
+    "mongoose": "^5.2.8",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "payload-validator": "1.0.4",
+    "pm2": "^3.0.3",
+    "rotating-file-stream": "^1.3.7",
+    "typescript": "3.0.1",
+    "typescript-register": "^1.1.0",
+    "typescript-require": "^0.2.10",
+    "url-crypt": "^1.2.1",
+    "winston": "3.0.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.5",
+    "@types/mongoose": "5.2.5",
+    "@types/node": "^10.7.0",
+    "babel-cli": "^6.26.0",
+    "eslint": "^5.3.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "nodemon": "^1.18.3",
+    "snyk": "^1.90.2",
+    "ts-node": "^7.0.1"
+  }
+}
