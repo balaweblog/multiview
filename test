@@ -41,9 +41,9 @@ ssm_client = boto3.client('ssm',
 
 region_name='us-east-2',
 
-aws_access_key_id='AKIA2HSC7VDVN6VT244X',
+aws_access_key_id='',
 
-aws_secret_access_key='XN4/PG/bOQdcFh3CiDYwWm1EIRJ8yHC/7cws56Ih'
+aws_secret_access_key=''
 
 ) # Need your credentials here
 
